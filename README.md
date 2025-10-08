@@ -1,51 +1,62 @@
-# Malaria Disease Classification Using Deep Learning
+# Malaria Cell Classification Using Deep Learning
 ---
+This project implements a convolutional neural network (CNN) using transfer learning with VGG19 and EfficientNetB3 architectures to classify cell images as either 'Parasitized' or 'Uninfected' with malaria.
 
 ## Objectives
 
-- To develop an **automated image classification model** capable of detecting plant diseases in potato leaves.  
-- To evaluate the **performance of CNN-based deep learning models** for agricultural image recognition tasks.  
-- To improve model robustness using **data augmentation and preprocessing techniques**.  
-- To demonstrate the potential of **AI-driven tools** in the field of **smart agriculture**.
+- Develop an accurate and efficient deep learning model for malaria cell classification.  
+- Utilize transfer learning from pre-trained CNN architectures (**VGG19**, **EfficientNetB3**).  
+- Evaluate model performance using accuracy and loss metrics.
 
 ---
 
 ## Dataset Description
 
-The model utilizes the **PlantVillage Dataset**, a publicly available benchmark dataset for plant disease classification tasks.  
+The model utilizes the **Malaria Cell Images Dataset** a publicly available benchmark dataset for malaria cell classification tasks.  
 For this project, only the **Potato Leaf Subset** is used, containing images categorized as:
 
 | Class Label | Description |
 |--------------|-------------|
-| Potato___Early_Blight | Leaves affected by the Early Blight fungal disease |
-| Potato___Late_Blight | Leaves affected by the Late Blight fungal disease |
-| Potato___Healthy | Healthy potato leaves without visible disease symptoms |
+| Uninfected | |
+| Parasite |  |
 
-**Dataset Source:** [PlantVillage Dataset (Kaggle)](https://www.kaggle.com/datasets/arjuntejaswi/plant-village)
 
-**Data Preprocessing Steps:**
-- Image resizing to **256 × 256 pixels**
-- Application of data augmentation (rotation, horizontal/vertical flip)
+**Dataset Source:**  (https://www.kaggle.com/datasets/iarunava/cell-images-for-detecting-malaria)
 
+### Dataset Classes
+
+| Class Label   | Description |
+|----------------|--------------|
+| **Uninfected** | Healthy cell image without malaria parasite |
+| **Parasitized** | Cell image containing malaria parasite |
+
+###  Data Preprocessing
+- Resize all images to **224 × 224 pixels**.  
+- Normalize pixel values (0–1 scaling).  
+- Split dataset into **training**, **validation**, and **test** sets.  
 ---
 
-## Model Architecture
+## Model Overview
 
-The proposed model is based on a **Sequential CNN architecture** developed using **TensorFlow and Keras**. 
+Two CNN architectures are fine-tuned using transfer learning:
+
+1. **VGG19**  
+2. **EfficientNetB3**
+ 
 
 ## ⚙️ Model Training Configuration
 
 | Parameter | Value |
 |------------|--------|
 | Optimizer | Adam |
-| Loss Function | Sparse Categorical Crossentropy |
-| Epochs | 40 |
+| Loss Function | Categorical Crossentropy |
+| Epochs | 30 |
 | Batch Size | 32 |
 | Evaluation Metric | Accuracy |
 
 **Training Strategy:**
 - The dataset is split into training, validation, and test sets.  
-- The model is trained for 40 epochs with real-time data augmentation.  
+- - Model trained for **30 epochs** with **early stopping** and **learning rate scheduler**.  
 - Performance is monitored using accuracy and loss curves.
 
 ---
