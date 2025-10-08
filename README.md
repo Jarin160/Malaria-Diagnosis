@@ -10,17 +10,6 @@ This project implements a convolutional neural network (CNN) using transfer lear
 
 ---
 
-## Dataset Description
-
-The model utilizes the **Malaria Cell Images Dataset** a publicly available benchmark dataset for malaria cell classification tasks.  
-For this project, only the **Potato Leaf Subset** is used, containing images categorized as:
-
-| Class Label | Description |
-|--------------|-------------|
-| Uninfected | |
-| Parasite |  |
-
-
 **Dataset Source:**  (https://www.kaggle.com/datasets/iarunava/cell-images-for-detecting-malaria)
 
 ### Dataset Classes
