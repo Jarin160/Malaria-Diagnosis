@@ -1,11 +1,11 @@
 # Malaria Cell Classification Using Deep Learning
 ---
-This project implements a convolutional neural network (CNN) using transfer learning with VGG19 and EfficientNetB3 architectures to classify cell images as either 'Parasitized' or 'Uninfected' with malaria.
+This project implements a convolutional neural network (CNN) using transfer learning with VGG19 architectures to classify cell images as either 'Parasitized' or 'Uninfected' with malaria.
 
 ## Objectives
 
 - Develop an accurate and efficient deep learning model for malaria cell classification.  
-- Utilize transfer learning from pre-trained CNN architectures (**VGG19**, **EfficientNetB3**).  
+- Utilize transfer learning from pre-trained CNN architectures **VGG19**.  
 - Evaluate model performance using accuracy and loss metrics.
 
 ---
@@ -30,7 +30,6 @@ This project implements a convolutional neural network (CNN) using transfer lear
 Two CNN architectures are fine-tuned using transfer learning:
 
 1. **VGG19**  
-2. **EfficientNetB3**
  
 
 ## ⚙️ Model Training Configuration
@@ -39,7 +38,7 @@ Two CNN architectures are fine-tuned using transfer learning:
 |------------|--------|
 | Optimizer | Adam |
 | Loss Function | Categorical Crossentropy |
-| Epochs | 30 |
+| Epochs | 5 |
 | Batch Size | 32 |
 | Evaluation Metric | Accuracy |
 
@@ -49,11 +48,6 @@ Two CNN architectures are fine-tuned using transfer learning:
 - Performance is monitored using accuracy and loss curves.
 
 ---
-
-## Model Evaluation
-
-Model evaluation is performed using unseen test data to assess generalization ability.
-Visualization tools such as **Matplotlib** are used to plot accuracy and loss trends over training epochs.
 
 ## Dependencies
 - pandas
